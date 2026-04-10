@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | Ojas Chinaria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --card-bg: #0f172a;
+            --accent: #10b981;
+            --accent-soft: rgba(16, 185, 129, 0.05);
+            --text-light: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: linear-gradient(to bottom right, #0f172a, #020617);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .gradient-border {
+            border-left: 4px solid var(--accent);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #1e293b;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.1);
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        .pill {
+            background: var(--accent-soft);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent);
+        }
+
+        .timeline-line {
+            width: 1px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+        }
+
+        .timeline-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: absolute;
+            left: 15.5px;
+            margin-top: 10px;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .skill-bar-bg {
+            height: 6px;
+            background: #1e293b;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .reflection-table th, .reflection-table td {
+            border-bottom: 1px solid #1e293b;
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        .reflection-table th {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            font-weight: 800;
+        }
+
+        .section-number {
+            -webkit-text-stroke: 1px #1e293b;
+            color: transparent;
+            font-size: 4rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="w-full">
+        <header class="glass-header w-full pt-20 pb-16 px-6 md:px-12 lg:px-24 border-b-4 border-emerald-500">
+            <div class="max-w-[1800px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12">
+                    <div>
+                        <h2 class="text-emerald-500 font-bold tracking-[0.4em] text-sm mb-2 uppercase">Academic Portfolio 2025-26</h2>
+                        <div class="flex items-center gap-4">
+                            <p class="text-slate-400 font-bold text-base bg-slate-800/50 px-4 py-1 rounded">BAENG 101</p>
+                            <p class="text-slate-600 text-xs uppercase tracking-[0.2em] font-black">Lab Fat Submission</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 text-white leading-none">Ojas Chinaria</h1>
+                <p class="text-xl md:text-3xl text-slate-400 font-light max-w-4xl mb-12 border-l-2 border-slate-800 pl-6">
+                    B.Tech Computer Science & Engineering <span class="text-emerald-500 mx-2">|</span> VIT Vellore
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-800 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                    <div class="p-8 bg-slate-900/80">
+                        <p class="text-xs text-emerald-500 uppercase font-black tracking-widest mb-2">Reg Number</p>
+                        <p class="font-mono text-xl text-slate-100">25BCE0392</p>
+                    </div>
+                    <div class="p-8 bg-slate-900/80">
+                        <p class="text-xs text-emerald-500 uppercase font-black tracking-widest mb-2">Programme</p>
+                        <p class="text-xl text-slate-100">B.Tech CSE Core</p>
+                    </div>
+                    <div class="p-8 bg-slate-900/80">
+                        <p class="text-xs text-emerald-500 uppercase font-black tracking-widest mb-2">Institution</p>
+                        <p class="text-xl text-slate-100">VIT Vellore</p>
+                    </div>
+                    <div class="p-8 bg-slate-900/80">
+                        <p class="text-xs text-emerald-500 uppercase font-black tracking-widest mb-2">Campus Location</p>
+                        <p class="text-xl text-slate-100">Vellore, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="w-full px-6 md:px-12 lg:px-24 py-20 space-y-32">
+            <div class="max-w-[1800px] mx-auto">
+                <section id="about" class="grid lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-8 space-y-10">
+                        <div class="flex items-center gap-6">
+                            <span class="section-number font-black">01</span>
+                            <h2 class="text-5xl font-black uppercase tracking-tight">About Me</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <p class="text-slate-200 leading-relaxed text-2xl lg:text-3xl text-justify font-light">
+                                I am Ojas Chinaria, a first-year Computer Science & Engineering student at VIT Vellore. I am a rational problem-solver driven by a deep interest in the security and integrity of digital systems. My current focus lies at the intersection of Cybersecurity, Bug Bounty, and Game Design.
+                            </p>
+                            <p class="text-slate-400 leading-relaxed text-xl lg:text-2xl text-justify font-light">
+                                I thrive on building practical tools that solve real-world problems—ranging from browser-based security extensions to AI-driven consultancy frameworks. As an engineering student, I aim to balance technical rigor with creative innovation, ensuring every line of code serves a functional and secure purpose.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-4 pt-6">
+                            <span class="pill px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest">Cybersecurity</span>
+                            <span class="pill px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest">Bug Bounty</span>
+                            <span class="pill px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest">Full-Stack Dev</span>
+                            <span class="pill px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest">Game Design</span>
+                            <span class="pill px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest">AI Innovation</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 grid grid-cols-1 gap-8">
+                        <div class="card p-10 rounded-2xl gradient-border">
+                            <p class="text-xs uppercase text-slate-500 font-black mb-2 tracking-widest">Expected Graduation</p>
+                            <p class="font-bold text-slate-100 text-3xl">May 2029</p>
+                        </div>
+                        <div class="card p-10 rounded-2xl gradient-border">
+                            <p class="text-xs uppercase text-slate-500 font-black mb-2 tracking-widest">Academic Standing</p>
+                            <p class="font-bold text-6xl accent-text tracking-tighter">8.0 <span class="text-xl text-slate-600 font-normal">/ 10.0 GPA</span></p>
+                        </div>
+                        <div class="card p-10 rounded-2xl gradient-border">
+                            <p class="text-xs uppercase text-slate-500 font-black mb-2 tracking-widest">JEE Advanced</p>
+                            <p class="font-bold text-slate-100 text-3xl">AIR 20,147</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="education" class="pt-10">
+                    <div class="flex items-center gap-6 mb-16">
+                        <span class="section-number font-black">02</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tight">Education</h2>
+                    </div>
+                    <div class="relative pl-12 space-y-16">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="relative group">
+                            <div class="timeline-dot"></div>
+                            <div class="card p-12 rounded-2xl ml-8 max-w-6xl">
+                                <span class="text-sm accent-text font-black uppercase tracking-[0.3em]">2025 — Present</span>
+                                <h3 class="text-4xl font-bold mt-2 text-white">B.Tech Computer Science & Engineering</h3>
+                                <p class="text-slate-400 text-2xl font-medium mt-2">VIT Vellore, Vellore</p>
+                                <p class="text-slate-300 mt-8 text-xl leading-relaxed italic border-l-2 border-slate-800 pl-8">Currently establishing core competencies in Data Structures & Algorithms (DSA), Discrete Mathematics, and Python Programming for scalable systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="timeline-dot"></div>
+                            <div class="card p-12 rounded-2xl ml-8 max-w-6xl">
+                                <span class="text-sm text-slate-500 font-black uppercase tracking-[0.3em]">2022 — 2025</span>
+                                <h3 class="text-4xl font-bold mt-2 text-white">Higher Secondary (Class XII)</h3>
+                                <p class="text-slate-400 text-2xl font-medium mt-2">Aggregate: 83.2%</p>
+                                <p class="text-slate-300 mt-8 text-xl leading-relaxed pl-8 border-l-2 border-slate-800">Qualified JEE Main and JEE Advanced with an All India Rank of 20,147, demonstrating strong analytical and mathematical foundations.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="timeline-dot"></div>
+                            <div class="card p-12 rounded-2xl ml-8 max-w-6xl">
+                                <span class="text-sm text-slate-500 font-black uppercase tracking-[0.3em]">Primary Education</span>
+                                <h3 class="text-4xl font-bold mt-2 text-white">Secondary School (Class X)</h3>
+                                <p class="text-slate-400 text-2xl font-medium mt-2">Aggregate: 93.2%</p>
+                                <p class="text-slate-300 mt-8 text-xl leading-relaxed pl-8 border-l-2 border-slate-800">Academic excellence highlighted by 24 SOF Olympiad medals including 7 Gold medals across science and mathematics disciplines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="pt-10">
+                    <div class="flex items-center gap-6 mb-16">
+                        <span class="section-number font-black">03</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tight">Technical Stack</h2>
+                    </div>
+                    <div class="flex flex-col gap-10 max-w-7xl">
+                        <div class="card p-12 rounded-2xl">
+                            <h3 class="accent-text font-black mb-12 uppercase text-sm tracking-[0.3em]">Programming Languages</h3>
+                            <div class="space-y-10">
+                                <div class="space-y-4">
+                                    <div class="flex justify-between text-sm font-mono tracking-widest text-slate-300"><span>PYTHON</span><span>90%</span></div>
+                                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%"></div></div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between text-sm font-mono tracking-widest text-slate-300"><span>C / C++</span><span>78%</span></div>
+                                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 78%"></div></div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between text-sm font-mono tracking-widest text-slate-300"><span>HTML5 / CSS3</span><span>85%</span></div>
+                                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%"></div></div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between text-sm font-mono tracking-widest text-slate-300"><span>JAVASCRIPT</span><span>65%</span></div>
+                                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 65%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-12 rounded-2xl">
+                            <h3 class="accent-text font-black mb-12 uppercase text-sm tracking-[0.3em]">Tools & AI Ecosystem</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">Git & GitHub</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">VS Code / Cursor</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">Manifest V3</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">AI Prompting</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">Claude / GPT</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center hover:border-emerald-500 transition-colors">
+                                    <p class="text-sm font-bold text-slate-100">Linux CLI</p>
+                                </div>
+                            </div>
+                            <div class="pt-10">
+                                <p class="text-slate-400 text-lg italic font-light">"Leveraging AI to augment development speed while maintaining manual code rigor."</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="pt-10">
+                    <div class="flex items-center gap-6 mb-16">
+                        <span class="section-number font-black">04</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tight">Portfolio Projects</h2>
+                    </div>
+                    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-8">
+                        <div class="card p-10 rounded-2xl flex flex-col justify-between h-full">
+                            <div>
+                                <div class="mb-8">
+                                    <span class="text-xs bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full border border-emerald-500/20 font-bold uppercase">Security Tool</span>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-6 text-white leading-tight">Fake News Detector</h3>
+                                <p class="text-slate-400 text-lg leading-relaxed mb-10">Browser extension using Manifest V3 to identify misinformation patterns in real-time content.</p>
+                            </div>
+                            <div class="flex justify-between items-center pt-8 border-t border-slate-800">
+                                <span class="text-xs uppercase font-black text-slate-500 tracking-widest">JavaScript</span>
+                                <span class="text-xs uppercase font-black text-emerald-500 tracking-widest">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-10 rounded-2xl flex flex-col justify-between h-full">
+                            <div>
+                                <div class="mb-8">
+                                    <span class="text-xs bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full border border-emerald-500/20 font-bold uppercase">Systems</span>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-6 text-white leading-tight">Hospital Management</h3>
+                                <p class="text-slate-400 text-lg leading-relaxed mb-10">Centralized patient records system with secure authentication and database optimization.</p>
+                            </div>
+                            <div class="flex justify-between items-center pt-8 border-t border-slate-800">
+                                <span class="text-xs uppercase font-black text-slate-500 tracking-widest">Python</span>
+                                <span class="text-xs uppercase font-black text-emerald-500 tracking-widest">Database</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-10 rounded-2xl flex flex-col justify-between h-full">
+                            <div>
+                                <div class="mb-8">
+                                    <span class="text-xs bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full border border-emerald-500/20 font-bold uppercase">HCI</span>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-6 text-white leading-tight">Motion Sensor Game</h3>
+                                <p class="text-slate-400 text-lg leading-relaxed mb-10">Bridging physical hardware inputs with software logic for interactive digital experiences.</p>
+                            </div>
+                            <div class="flex justify-between items-center pt-8 border-t border-slate-800">
+                                <span class="text-xs uppercase font-black text-slate-500 tracking-widest">C++</span>
+                                <span class="text-xs uppercase font-black text-emerald-500 tracking-widest">Hardware</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-10 rounded-2xl flex flex-col justify-between h-full">
+                            <div>
+                                <div class="mb-8">
+                                    <span class="text-xs bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full border border-emerald-500/20 font-bold uppercase">AI Innovation</span>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-6 text-white leading-tight">AI Consultant</h3>
+                                <p class="text-slate-400 text-lg leading-relaxed mb-10">Advanced prompt engineering framework for structured medical consultancy using LLMs.</p>
+                            </div>
+                            <div class="flex justify-between items-center pt-8 border-t border-slate-800">
+                                <span class="text-xs uppercase font-black text-slate-500 tracking-widest">Prompt Eng</span>
+                                <span class="text-xs uppercase font-black text-emerald-500 tracking-widest">Claude</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="achievements" class="pt-10">
+                    <div class="flex items-center gap-6 mb-16">
+                        <span class="section-number font-black">05</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tight">Achievements</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="flex flex-col gap-6 p-12 border-t-4 border-emerald-500 bg-slate-900 rounded-b-3xl card h-full">
+                            <span class="text-5xl">🏆</span>
+                            <div>
+                                <h4 class="font-bold text-white text-2xl tracking-tight uppercase mb-3">National AI Hackathon</h4>
+                                <p class="text-slate-400 text-xl leading-relaxed">Awarded 2nd Prize nationally by the Government of India for innovative AI implementation and problem-solving.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 p-12 border-t-4 border-emerald-500 bg-slate-900 rounded-b-3xl card h-full">
+                            <span class="text-5xl">🛡️</span>
+                            <div>
+                                <h4 class="font-bold text-white text-2xl tracking-tight uppercase mb-3">Cybersecurity Contributor</h4>
+                                <p class="text-slate-400 text-xl leading-relaxed">Recognized for active contributions in WhiteHat workshops and vulnerability research sessions at VIT Vellore.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 p-12 border-t-4 border-slate-700 bg-slate-900 rounded-b-3xl card h-full">
+                            <span class="text-5xl">🏅</span>
+                            <div>
+                                <h4 class="font-bold text-white text-2xl tracking-tight uppercase mb-3">SOF Olympiads</h4>
+                                <p class="text-slate-400 text-xl leading-relaxed">Won 24 medals including 7 Golds in National Science and Math Olympiads, proving academic excellence early on.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 p-12 border-t-4 border-slate-700 bg-slate-900 rounded-b-3xl card h-full">
+                            <span class="text-5xl">🎙️</span>
+                            <div>
+                                <h4 class="font-bold text-white text-2xl tracking-tight uppercase mb-3">Debate Society</h4>
+                                <p class="text-slate-400 text-xl leading-relaxed">Active member of the VIT Debate Society, focusing on technical communication and logical argumentation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reflection" class="pt-10">
+                    <div class="flex items-center gap-6 mb-16">
+                        <span class="section-number font-black">06</span>
+                        <h2 class="text-4xl font-black uppercase tracking-tight">Academic Reflection</h2>
+                    </div>
+                    
+                    <div class="card rounded-2xl overflow-hidden mb-16">
+                        <table class="reflection-table w-full">
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Key Learning Outcome</th>
+                                    <th>Development Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-slate-300 text-lg">
+                                <tr>
+                                    <td class="font-bold text-white uppercase text-xs tracking-widest">Technical Logic</td>
+                                    <td>Transitioning from competitive problem solving to engineering complex project lifecycles.</td>
+                                    <td class="text-emerald-500 font-black uppercase text-xs">In-Progress</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold text-white uppercase text-xs tracking-widest">Digital Security</td>
+                                    <td>Understanding the fundamental trade-offs between system accessibility and absolute security.</td>
+                                    <td class="text-emerald-500 font-black uppercase text-xs">Applied</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold text-white uppercase text-xs tracking-widest">Communication</td>
+                                    <td>Developing the ability to articulate high-level technical concepts to non-technical stakeholders.</td>
+                                    <td class="text-emerald-500 font-black uppercase text-xs">Mastering</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card p-16 rounded-3xl relative border-none bg-emerald-500/[0.03]">
+                        <p class="text-slate-200 italic mb-12 relative z-10 leading-relaxed text-3xl font-light text-justify max-w-6xl">
+                            "My journey at VIT represents a fundamental shift from solving for grades to building for impact. I have come to realize that no system is ever truly 'finished' or 'perfect'—there is always a hidden vulnerability to secure or a feature to refine. I am committed to this iterative process of growth and innovation within the field of Computer Science."
+                        </p>
+                        <div class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+                            <div>
+                                <p class="font-bold text-white text-sm uppercase tracking-[0.4em] mb-6">Official Signature</p>
+                                <p class="text-emerald-500 font-serif italic text-6xl">Ojas Chinaria</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-slate-500 font-mono text-base tracking-widest">AUTHENTICATED PORTFOLIO</p>
+                                <p class="text-slate-600 font-mono text-sm mt-2 uppercase">Reg No: 25BCE0392 / VIT-V</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="w-full px-6 md:px-12 lg:px-24 py-24 bg-slate-950 border-t border-slate-900">
+            <div class="max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-20">
+                <div class="space-y-10">
+                    <p class="text-xs uppercase text-emerald-500 font-black tracking-[0.5em]">Verification Credentials</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 font-mono text-base">
+                        <div class="border-l border-slate-800 pl-6 py-2">
+                            <span class="text-slate-600 block text-xs mb-2">REGISTRATION</span>
+                            <span class="text-white">25BCE0392</span>
+                        </div>
+                        <div class="border-l border-slate-800 pl-6 py-2">
+                            <span class="text-slate-600 block text-xs mb-2">PROGRAMME</span>
+                            <span class="text-white">B.Tech CSE Core</span>
+                        </div>
+                        <div class="border-l border-slate-800 pl-6 py-2">
+                            <span class="text-slate-600 block text-xs mb-2">ACADEMIC YEAR</span>
+                            <span class="text-white">2025-2026</span>
+                        </div>
+                        <div class="border-l border-slate-800 pl-6 py-2">
+                            <span class="text-slate-600 block text-xs mb-2">COURSE CODE</span>
+                            <span class="text-white">BAENG 101</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end lg:items-end text-left lg:text-right">
+                    <p class="text-xs uppercase text-slate-500 font-black tracking-widest mb-4">Inquiries & Contact</p>
+                    <p class="text-3xl font-bold text-white hover:text-emerald-500 transition-colors">ojas.chinaria2025@vitstudent.ac.in</p>
+                    <p class="text-sm text-slate-600 mt-2 uppercase tracking-widest">Vellore Institute of Technology, India</p>
+                    <div class="mt-16">
+                        <p class="text-xs text-slate-700 font-black uppercase tracking-[0.3em]">© 2025 OJAS CHINARIA — ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
